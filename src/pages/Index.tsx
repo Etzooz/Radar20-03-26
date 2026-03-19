@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import satelliteDish from "@/assets/satellite-dish.png";
-import { RefreshCw, Clock, ArrowUpDown, Activity, AlertCircle } from "lucide-react";
+import { RefreshCw, Clock, ArrowUpDown, Activity, AlertCircle, Database } from "lucide-react";
 import { ForecastCard } from "@/components/ForecastCard";
 import { ForecastCardSkeleton } from "@/components/ForecastCardSkeleton";
 import { DataSourcesTable } from "@/components/DataSourcesTable";
@@ -211,10 +211,16 @@ const Index = () => {
           <p className="text-[9px] font-mono">
             API v{data.apiVersion || '?'} · Model: {data.modelVersion || '?'} · Sources: {data.dataQuality?.availableSources ?? '?'}/{data.dataQuality?.totalSources ?? '?'} active
           </p>
-          <Link to="/performance" className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground hover:text-foreground transition-colors mt-1">
-            <Activity className="w-3 h-3" />
-            View Oracle Performance →
-          </Link>
+          <div className="flex flex-col sm:flex-row sm:justify-center sm:gap-4 mt-1">
+            <Link to="/performance" className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground hover:text-foreground transition-colors">
+              <Activity className="w-3 h-3" />
+              View Oracle Performance →
+            </Link>
+            <Link to="/dev-logs" className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground hover:text-foreground transition-colors">
+              <Database className="w-3 h-3" />
+              View Dev Logs →
+            </Link>
+          </div>
         </footer>
       </div>
     </TooltipProvider>
