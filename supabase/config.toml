@@ -1,0 +1,10 @@
+project_id = "czxjtawtxjwunllwfwxy"
+
+[functions.oracle-accuracy]
+verify_jwt = false
+
+[functions.oracle-performance]
+verify_jwt = false
+
+[functions.oracle-snapshot]
+verify_jwt = false
